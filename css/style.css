@@ -6,4 +6,49 @@ canvas{
 	background-color: #eee;
 	margin: 2em 0;
 	padding: 2em;
+	float: left;
+	clear: left;
+}
+
+#views{
+	font-size: 1.5em;
+}
+
+#setting{
+	background-color: #F7FCB9;
+	margin: 1em 0;
+	padding: 1em 2em;
+	width: 500px;
+	height: 40%;
+	box-sizing: content-box;
+	line-height: 1.5em;
+	clear: right;
+	float: right;
+}
+@media screen and (max-width: 1330px) {
+	#setting{
+  		clear: left;
+		float: left;
+	}
+}
+.tb-result{
+	width: 100%;
+}
+
+#result{
+	background-color: #B7FDB9;
+	margin: 1em 0;
+	padding: 1em 2em;
+	width: 500px;
+	height: 40%;
+	box-sizing: content-box;
+	line-height: 1.5em;
+	clear: right;
+	float: right;
+}
+@media screen and (max-width: 1330px) {
+	#result{
+  		clear: left;
+		float: left;
+	}
 }

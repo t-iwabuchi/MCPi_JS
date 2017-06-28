@@ -15,10 +15,28 @@
 	</head>
 
 	<body>
+		<h1>
+			円周率計算 with モンテカルロ法
+		</h1>
 		<div id="canvas">
 			<canvas id="piCanvas" width="500" height="500">
 				Canvasに対応していません。Canvasに対応したブラウザをご利用ください。
 			</canvas>
+		</div>
+		<div id="views">
+			<div id="setting">
+				<form>
+					1秒間に打つ点の数 : <input type="dotpersecond" name="dotpersecond"><input type="submit" value="変更"> </ br>
+				</form>
+			</div>
+			<div id="result">
+				<table class="tb-result">
+					<tr><td>総打点数</td><td><div id="allPoints"></div></td><td>個</td></tr>
+					<tr><td>円内</td><td><div id="inPoints"></div></td><td>個</td></tr>
+					<tr><td>円外</td><td><div id="outPoints"></div></td><td>個</td></tr>
+					<tr><td>円周率</td><td><div id="piNumber"></div></td></tr>
+				</table>
+			</div>
 		</div>
 	</body>
 </html>
