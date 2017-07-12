@@ -18,9 +18,13 @@
 
 //FROM http://forse.hatenablog.com/entry/2014/06/28/170057
 
+var allPoint = 0;
+var inPoint = 0;
+
 window.onload=function(){
 	var add_event=$("dotpersecond_button");
 	add_event.onclick=updateobj;
+	drawBefore();
 }
 
 
@@ -48,7 +52,7 @@ function getinput(){
 }
 
 //描画処理
-function draw(newPiObj){
+function drawBefore(newPiObj){
 	var canvas=$("piCanvas");
 	if (!canvas || !canvas.getContext) {
 		return false;
@@ -59,6 +63,10 @@ function draw(newPiObj){
 	content.beginPath();
 	content.arc(canvas.width/2, canvas.height/2, canvas.width/2, 0, Math.PI*2);
 	content.stroke();
+}
+
+function draw(newPiObj){
+
 }
 
 //DOMobjを取得する処理
