@@ -18,6 +18,8 @@
 
 //FROM http://forse.hatenablog.com/entry/2014/06/28/170057
 
+var timer;
+
 var allPoint = 0;
 var inPoint = 0;
 
@@ -40,15 +42,15 @@ function pi_canvas(dotpersecond){
   //図の描画処理
 function updateobj(){
 	var newPiObj=getinput();
-	draw(newPiObj);
+	timer = setInterval("draw(newPiObj)",getinput());
 }
 
 //入力値を取得し、オブジェクトを生成する処理
 
 function getinput(){
 	var dotpersecond =$("dotpersecond").value;
-	var newPi =new pi_canvas(dotpersecond);
-	return newPi;
+	var dotpersecond_number =new pi_canvas(dotpersecond);
+	return dotpersecond_number;
 }
 
 //描画処理
@@ -66,7 +68,15 @@ function drawBefore(newPiObj){
 }
 
 function draw(newPiObj){
-
+	var canvas=$("piCanvas");
+	if (!canvas || !canvas.getContext) {
+		return false;
+	}
+	var content = canvas.getContext('2d');
+	var randX = Math.floor(Math.random() * canvas.width);
+	var randY = Math.floor(Math.random() * canvas.height);
+	paint.setStrokeWidth(12);
+	canvas.fillRect(randX, randY, 1, 1);
 }
 
 //DOMobjを取得する処理
