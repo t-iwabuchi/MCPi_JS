@@ -23,6 +23,7 @@ var timer;
 var allPoint = 0;
 var inPoint = 0;
 
+//ページ読み込み時の処理
 window.onload=function(){
 	var add_event=$("dotpersecond_button");
 	add_event.onclick=updateobj;
@@ -46,7 +47,6 @@ function updateobj(){
 }
 
 //入力値を取得し、オブジェクトを生成する処理
-
 function getinput(){
 	var dotpersecond =$("dotpersecond").value;
 	var dotpersecond_number =new pi_canvas(dotpersecond);
@@ -67,6 +67,7 @@ function drawBefore(newPiObj){
 	content.stroke();
 }
 
+//描画処理
 function draw(newPiObj){
 	var canvas=$("piCanvas");
 	if (!canvas || !canvas.getContext) {
