@@ -27,18 +27,20 @@
 		</div>
 		<div id="views">
 			<div id="setting">
-				<form>
+				<form id="set_interval">
 					<table label="tb-setting">
-						<tr><label class="form-label"><td>1秒間の打点数</td><td><input type="text" id="dotpersecond" name="dotpersecond"></td><td><input type="submit" id="dotpersecond_button" value="変更"></td></label></tr>
+						<tr><label class="form-label"><td>1秒間の打点数</td>
+							<td><input type="number" min="0" max="1000" value="500" id="dotpersecond" name="dotpersecond" placeholder="0~1000"></td>
+							<td><input type="submit" id="dotpersecond_button" value="変更" onclick="return set_interval()"></td><td>※1000まで</td></label></tr>
 					</table>
 				</form>
 			</div>
 			<div id="result">
 				<table class="tb-result">
-					<tr><td>総打点数</td><td><div id="allPoints"></div></td><td>個</td></tr>
-					<tr><td>円内</td><td><div id="inPoints"></div></td><td>個</td></tr>
-					<tr><td>円外</td><td><div id="outPoints"></div></td><td>個</td></tr>
-					<tr><td>円周率</td><td><div id="piNumber"></div></td></tr>
+					<tr><td>総打点数</td><td align="left"><div id="allPoints"></div></td><td align="right">個</td></tr>
+					<tr><td>円内</td><td align="left"><div id="inPoints"></div></td><td align="right">個</td></tr>
+					<tr><td>円外</td><td align="left"><div id="outPoints"></div></td><td align="right">個</td></tr>
+					<tr><td>円周率</td><td align="left"><div id="piNumber"></div></td></tr>
 				</table>
 			</div>
 		</div>
