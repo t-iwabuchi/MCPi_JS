@@ -38,8 +38,8 @@ var inPoint = 0;
 
 //ページ読み込み時の処理
 window.onload=function(){
-	var add_event=$("dotpersecond_button");
-	add_event.onclick=updateobj;
+	var button_event=$("dotpersecond_button");
+	button_event.onclick=set_timer();
 	drawBefore();
 }
 
@@ -51,22 +51,19 @@ function pi_canvas(dotpersecond){
 	this.dotpersecond=dotpersecond;
 }
 
-//以下の処理を呼び出す処理
-  //図をobj生成処理
-  //図の描画処理
-function updateobj(){
-	var newPiObj=getinput();
-	timer = setInterval("draw(newPiObj)",getinput());
+// タイマーを回す間隔をセット
+function set_timer(){
+	var time = getinput();
+	timer = setInterval("draw()",time);
 }
 
-//入力値を取得し、オブジェクトを生成する処理
+//入力値を取得
 function getinput(){
-	var dotpersecond =$("dotpersecond").value;
-	var dotpersecond_number =new pi_canvas(dotpersecond);
-	return dotpersecond_number;
+	var time =$("dotpersecond").value;
+	return time;
 }
 
-//描画処理
+//事前描画処理(初期描画)
 function drawBefore(newPiObj){
 	var canvas=$("piCanvas");
 	if (!canvas || !canvas.getContext) {
@@ -78,10 +75,11 @@ function drawBefore(newPiObj){
 	content.beginPath();
 	content.arc(canvas.width/2, canvas.height/2, canvas.width/2, 0, Math.PI*2);
 	content.stroke();
+	set_timer();
 }
 
 //描画処理
-function draw(newPiObj){
+function draw(){
 	var canvas=$("piCanvas");
 	if (!canvas || !canvas.getContext) {
 		return false;
@@ -89,7 +87,7 @@ function draw(newPiObj){
 	var content = canvas.getContext('2d');
 	var randX = Math.floor(Math.random() * canvas.width);
 	var randY = Math.floor(Math.random() * canvas.height);
-	paint.setStrokeWidth(12);
+	canvas.setStrokeWidth(12);
 	canvas.fillRect(randX, randY, 1, 1);
 }
 
