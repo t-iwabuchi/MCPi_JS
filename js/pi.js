@@ -3,6 +3,8 @@ var timer;
 var allPoint = 0;
 var inPoint = 0;
 
+var pi = 3.1415926535897932
+
 //ページ読み込み時の処理
 window.onload=function(){
 	set_interval();
@@ -39,6 +41,7 @@ function view_number(allPoint, inPoint){
 	$("inPoints").innerHTML = inPoint;
 	$("outPoints").innerHTML = allPoint - inPoint;
 	$("piNumber").innerHTML = inPoint / allPoint * 4;
+	$("error").innerHTML = ((inPoint / allPoint * 4) - pi) / pi * 100;
 }
 
 function draw(){
