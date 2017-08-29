@@ -13,23 +13,33 @@ canvas{
 #views{
 	font-size: 1.5em;
 }
+@media screen and (max-width: 1175px) {
+	#views{
+		display: inline;
+	}
+}
+
+#setting_and_result{
+	margin: 1em 0 0 1em;
+	display: inline;
+	clear: right;
+	float: left;
+}
+@media screen and (max-width: 1175px) {
+	#setting_and_result{
+		margin: 0;
+  	clear: left;
+		float: left;
+	}
+}
 
 #setting{
 	background-color: #F7FCB9;
-	margin: 1em 0;
 	padding: 1em 1.5em;
 	width: 450px;
 	height: 40%;
 	box-sizing: content-box;
 	line-height: 1.5em;
-	clear: right;
-	float: right;
-}
-@media screen and (max-width: 1280px) {
-	#setting{
-  	clear: left;
-		float: left;
-	}
 }
 .tb-result{
 	width: 100%;
@@ -37,18 +47,32 @@ canvas{
 
 #result{
 	background-color: #B7FDB9;
-	margin: 1em 0;
+	margin-top: 1em;
 	padding: 1em 1.5em;
 	width: 450px;
 	height: 40%;
 	box-sizing: content-box;
 	line-height: 1.5em;
-	clear: right;
-	float: right;
 }
-@media screen and (max-width: 1280px) {
-	#result{
-  	clear: left;
-		float: left;
+
+#explain{
+	background-color: #9abcff;
+	margin-top: 1em;
+	padding: 1em 1.5em;
+	width: 450px;
+	height: 40%;
+	box-sizing: content-box;
+	line-height: 1.5em;
+	float: left;
+}
+@media screen and (min-width: 1175px) {
+	#explain{
+		margin: 1em 0 0 1em;
+	}
+}
+@media screen and (min-width: 1860px) {
+	#explain{
+		margin: 1em 0 0 1em;
+		float: right;
 	}
 }

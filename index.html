@@ -26,23 +26,33 @@
 			</canvas>
 		</div>
 		<div id="views">
-			<div id="setting">
-				<form id="set_interval">
-					<table label="tb-setting">
-						<tr><label class="form-label"><td>1秒間の打点数</td>
-							<td><input type="number" min="0" max="1000" value="100" id="dotpersecond" name="dotpersecond" placeholder="0~1000"></td>
-							<td><input type="submit" id="dotpersecond_button" value="変更" onclick="return set_interval()"></td><td>※1000まで</td></label></tr>
+			<div id="setting_and_result">
+				<div id="setting">
+					<form id="set_interval">
+						<table label="tb-setting">
+							<tr><td><label class="form-label">1秒間の打点数(※1000まで)</label></td>
+								<td align="right"><input type="number" min="0" max="1000" value="100" id="dotpersecond" name="dotpersecond" placeholder="0~1000"></td>
+								<td align="right"><input type="submit" id="dotpersecond_button" value="変更" onclick="return set_interval()"></td></tr>
+						</table>
+					</form>
+				</div>
+				<div id="result">
+					<table class="tb-result">
+						<tr><td>総打点数</td><td align="left"><div id="allPoints"></div></td><td align="right">個</td></tr>
+						<tr><td>円内</td><td align="left"><div id="inPoints"></div></td><td align="right">個</td></tr>
+						<tr><td>円外</td><td align="left"><div id="outPoints"></div></td><td align="right">個</td></tr>
+						<tr><td>円周率</td><td align="left"><div id="piNumber"></div></td></tr>
+						<tr><td>誤差</td><td align="left"><div id="error"></div></td></td><td align="right">%</td></tr>
 					</table>
-				</form>
+				</div>
 			</div>
-			<div id="result">
-				<table class="tb-result">
-					<tr><td>総打点数</td><td align="left"><div id="allPoints"></div></td><td align="right">個</td></tr>
-					<tr><td>円内</td><td align="left"><div id="inPoints"></div></td><td align="right">個</td></tr>
-					<tr><td>円外</td><td align="left"><div id="outPoints"></div></td><td align="right">個</td></tr>
-					<tr><td>円周率</td><td align="left"><div id="piNumber"></div></td></tr>
-					<tr><td>誤差</td><td align="left"><div id="error"></div></td></td><td align="right">%</td></tr>
-				</table>
+			<div id="explain">
+				<h2>円周率</h2>
+				3.<br />
+				1415926535 8979323846 2643383279
+				5028841971 6939937510 5820974944
+				5923078164 0628620899 8628034825
+				3421170679
 			</div>
 		</div>
 	</body>
